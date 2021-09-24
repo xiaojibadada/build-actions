@@ -11,10 +11,7 @@ cd package/UA2F
 git checkout 20210531T234622
 cd ../..
 # 更新queue
-git clone https://github.com/openwrt/packages
-rm -rf package/libs/libnetfilter-queue
-# cp命令方便本地使用
-cp -rf packages/libs/libnetfilter-queue package/libs/
+svn checkout https://github.com/openwrt/packages/trunk/libs/libnetfilter-queue package/libs/libnetfilter-queue
 
 # 修改内核设置,不直接全部追加的原因是看起来不舒服
 echo "CONFIG_IP_SET=y" >> target/linux/ramips/mt7620/config-5.4
