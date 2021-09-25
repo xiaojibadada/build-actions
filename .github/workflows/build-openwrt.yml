@@ -204,15 +204,6 @@ jobs:
         cat> package/network/config/firewall/files/firewall.user <<EOF
         iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53
         iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53 
-        iptables -t mangle -N IPID_MOD
-        iptables -t mangle -A FORWARD -j IPID_MOD
-        iptables -t mangle -A OUTPUT -j IPID_MOD
-        iptables -t mangle -A IPID_MOD -d 0.0.0.0/8 -j RETURN
-        iptables -t mangle -A IPID_MOD -d 127.0.0.0/8 -j RETURN
-        iptables -t mangle -A IPID_MOD -d 172.16.0.0/12 -j RETURN
-        iptables -t mangle -A IPID_MOD -d 192.168.0.0/16 -j RETURN
-        iptables -t mangle -A IPID_MOD -d 255.0.0.0/8 -j RETURN
-        iptables -t mangle -A IPID_MOD -j MARK --set-xmark 0x10/0x10 
         iptables -t mangle -N ua2f
         iptables -t mangle -A ua2f -d 127.0.0.0/8 -j RETURN
         iptables -t mangle -A ua2f -d 192.168.0.0/16 -j RETURN
