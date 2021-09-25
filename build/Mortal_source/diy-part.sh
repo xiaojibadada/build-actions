@@ -13,27 +13,6 @@ cd ../..
 # 更新queue
 svn checkout https://github.com/openwrt/packages/trunk/libs/libnetfilter-queue package/libs/libnetfilter-queue
 
-# 修改内核设置,不直接全部追加的原因是看起来不舒服
-echo "CONFIG_IP_SET=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_IP_SET_HASH_IPPORT=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_IP_SET_MAX=256" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NETFILTER=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NETFILTER_FAMILY_ARP=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NETFILTER_FAMILY_BRIDGE=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NETFILTER_NETLINK=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NETFILTER_NETLINK_GLUE_CT=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NETFILTER_NETLINK_LOG=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NETFILTER_XTABLES=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NFT_REJECT=m" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NFT_REJECT_IPV4=m" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NF_CONNTRACK=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NF_CONNTRACK_LABELS=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NF_CT_NETLINK=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NF_DEFRAG_IPV4=y" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NF_REJECT_IPV4=m" >> target/linux/ramips/mt7620/config-5.4
-echo "CONFIG_NF_TABLES=y" >> target/linux/ramips/mt7620/config-5.4
-
-
 cat >$NETIP <<-EOF
 uci set network.lan.ipaddr='192.168.2.2'                                    # IPv4 地址(openwrt后台地址)
 uci set network.lan.netmask='255.255.255.0'                                 # IPv4 子网掩码
