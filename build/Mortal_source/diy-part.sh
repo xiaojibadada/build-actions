@@ -31,7 +31,7 @@ EOF
 
 # sed -i "s/OpenWrt /${Author} Compiled in $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" $ZZZ          # 增加个性名字${Author}默认为你的github账号
 
-sed -i '/8617841./d' $ZZZ                                                            # 设置密码为空
+sed -i '/CYXluq4wUazHjmCDBCqXF/d' $ZZZ                                                            # 设置密码为空
 
 
 # K3专用，编译K3的时候只会出K3固件
