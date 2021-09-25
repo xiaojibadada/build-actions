@@ -31,7 +31,7 @@ EOF
 
 # sed -i "s/OpenWrt /${Author} Compiled in $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" $ZZZ          # 增加个性名字${Author}默认为你的github账号
 
-sed -i '/CYXluq4wUazHjmCDBCqXF/d' $ZZZ                                                            # 设置密码为空
+sed -i 's/R6Naic$ejtqsb/0sRiB5PGtDs/eq/:18895:0:99999:7:::/g' package/emortal/default-settings/files/zzz-default-settings                                                        # 设置密码为空
 
 
 # K3专用，编译K3的时候只会出K3固件
