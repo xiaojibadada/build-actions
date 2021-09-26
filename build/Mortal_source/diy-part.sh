@@ -25,14 +25,13 @@ uci commit network                                                          # �
 #uci commit dhcp                                                             # 跟‘关闭DHCP功能’联动,同时启用或者删除跟注释
 uci set system.@system[0].hostname='desktop-'                            # 修改主机名称为OpenWrt-123
 EOF
-
-
 # sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile           # 选择argon为默认主题
 
 # sed -i "s/OpenWrt /${Author} Compiled in $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" $ZZZ          # 增加个性名字${Author}默认为你的github账号
 
-sed -i 's/sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow             # 设置密码为空
+sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow             # 设置密码为空
 [ -f '/bin/bash' ] && sed -i 's|root:x:0:0:root:/root:/bin/ash|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd
+
 
 uci -q batch <<-EOF
 	set system.@system[0].timezone='CST-8'
