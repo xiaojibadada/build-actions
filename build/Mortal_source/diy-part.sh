@@ -29,25 +29,6 @@ EOF
 
 # sed -i "s/OpenWrt /${Author} Compiled in $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" $ZZZ          # 增加个性名字${Author}默认为你的github账号
 
-sed -i 's/root:$1$A/R6Naic$ejtqsb/0sRiB5PGtDs/eq/:18895:0:99999:7:::/g' /etc/shadow             # 设置密码为空
-[ -f '/bin/bash' ] && sed -i 's|root:x:0:0:root:/root:/bin/ash|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd
-
-uci -q batch <<-EOF
-	set system.@system[0].timezone='CST-8'
-	set system.@system[0].zonename='Asia/Shanghai'
-	delete system.ntp.server
-	add_list system.ntp.server='time1.cloud.tencent.com'
-	add_list system.ntp.server='ntp1.aliyun.com'
-	add_list system.ntp.server='ntp.ntsc.ac.cn'
-	add_list system.ntp.server='cn.ntp.org.cn'
-EOF
-uci commit system
-sed -i 's,downloads.openwrt.org,mirrors.tencent.com/lede,g' /etc/opkg/distfeeds.conf
-
-
-
-
-
 # K3专用，编译K3的时候只会出K3固件
 #sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
 
