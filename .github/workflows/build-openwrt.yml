@@ -223,6 +223,13 @@ jobs:
         iptables -t nat -A ntp_force_local -s 192.168.0.0/16 -j DNAT --to-destination 192.168.2.2
         iptables -t mangle -A POSTROUTING -j TTL --ttl-set 64
         EOF
+        cat> package/base-files/files/etc/rc.local <<EOF
+        # Put your custom commands here that should be executed once
+        # the system init finished. By default this file does nothing.
+        ipset create nohttp hash:ip,port hashsize 16384 timeout 300
+        /usr/dogcom -m dhcp -c /usr/drcom.conf -d -e
+        exit 0
+        EOF
 
     - name: 开始编译固件
       id: compile
