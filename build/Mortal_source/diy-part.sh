@@ -31,8 +31,6 @@ EOF
 
 sed -i 's/root:$1$A/R6Naic$ejtqsb/0sRiB5PGtDs/eq/:18895:0:99999:7:::/g' /etc/shadow             # 设置密码为空
 [ -f '/bin/bash' ] && sed -i 's|root:x:0:0:root:/root:/bin/ash|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd
-sed -i 's/00 5 * * * sleep 5 && touch /etc/banner && reboot/g' /etc/crontabs/root
-
 
 uci -q batch <<-EOF
 	set system.@system[0].timezone='CST-8'
@@ -46,8 +44,13 @@ EOF
 uci commit system
 sed -i 's,downloads.openwrt.org,mirrors.tencent.com/lede,g' /etc/opkg/distfeeds.conf
 
+
+
+
+
 # K3专用，编译K3的时候只会出K3固件
 #sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
+
 
 
 # 修改插件名字
