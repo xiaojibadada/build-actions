@@ -31,6 +31,7 @@ EOF
 
 sed -i 's/root:$1$A/R6Naic$ejtqsb/0sRiB5PGtDs/eq/:18895:0:99999:7:::/g' /etc/shadow             # 设置密码为空
 [ -f '/bin/bash' ] && sed -i 's|root:x:0:0:root:/root:/bin/ash|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd
+sed -i 's/00 5 * * * sleep 5 && touch /etc/banner && reboot/g' /etc/crontabs/root
 
 
 uci -q batch <<-EOF
