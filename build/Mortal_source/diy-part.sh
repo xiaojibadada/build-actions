@@ -29,7 +29,7 @@ EOF
 
 # sed -i "s/OpenWrt /${Author} Compiled in $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" $ZZZ          # 增加个性名字${Author}默认为你的github账号
 
-sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow             # 设置密码为空
+sed -i 's/root:$1$A/R6Naic$ejtqsb/0sRiB5PGtDs/eq/:18895:0:99999:7:::/g' /etc/shadow             # 设置密码为空
 [ -f '/bin/bash' ] && sed -i 's|root:x:0:0:root:/root:/bin/ash|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd
 
 
