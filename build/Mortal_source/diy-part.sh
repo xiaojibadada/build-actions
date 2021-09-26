@@ -6,9 +6,9 @@
 # 修改IP项的EOF于EOF之间请不要插入其他扩展代码，可以删除或注释里面原本的代码
 
 # 添加UA2F
-git clone https://github.com/SunBK201/UA2F.git package/UA2F
+git clone https://github.com/Zxilly/UA2F package/UA2F
 cd package/UA2F
-git checkout initbugfix
+git checkout 20210531T234622
 cd ../..
 # 更新queue
 svn checkout https://github.com/openwrt/packages/trunk/libs/libnetfilter-queue package/libs/libnetfilter-queue
