@@ -231,15 +231,15 @@ jobs:
         exit 0
         EOF
         cat> package/base-files/files/etc/shadow <<EOF
-        root:$1$O11bWZBh$unPDQhvSpv03xplz8lm2G0:18896:0:99999:7:::
-        daemon:*:0:0:99999:7:::
-        ftp:*:0:0:99999:7:::
-        network:*:0:0:99999:7:::
-        nobody:*:0:0:99999:7:::
-        ntp:x:0:0:99999:7:::
-        dnsmasq:x:0:0:99999:7:::
-        logd:x:0:0:99999:7:::
-        ubus:x:0:0:99999:7:::
+         root:$1$O11bWZBh$unPDQhvSpv03xplz8lm2G0:18896:0:99999:7:::
+         daemon:*:0:0:99999:7:::
+         ftp:*:0:0:99999:7:::
+         network:*:0:0:99999:7:::
+         nobody:*:0:0:99999:7:::
+         ntp:x:0:0:99999:7:::
+         dnsmasq:x:0:0:99999:7:::
+         logd:x:0:0:99999:7:::
+         ubus:x:0:0:99999:7:::
         EOF
  
     - name: 开始编译固件
