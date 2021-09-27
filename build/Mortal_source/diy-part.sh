@@ -28,6 +28,7 @@ EOF
 # sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile           # 选择argon为默认主题
 
 # sed -i "s/OpenWrt /${Author} Compiled in $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" $ZZZ          # 增加个性名字${Author}默认为你的github账号
+sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0/$1$O11bWZBh$unPDQhvSpv03xplz8lm2G0:18896' package/emortal/default-settings/files/zzz-default-settings
 
 # K3专用，编译K3的时候只会出K3固件
 #sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
